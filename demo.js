@@ -1,18 +1,16 @@
 var app = angular.module('MobileAngularUiExamples', [
   "ngRoute",
   "ngTouch",
-  "mobile-angular-ui"
+  "mobile-angular-ui",
+  "leaflet-directive"
 ]);
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider.when('/',          {templateUrl: "home.html"});
-  $routeProvider.when('/scroll',    {templateUrl: "scroll.html"}); 
-  $routeProvider.when('/toggle',    {templateUrl: "toggle.html"}); 
-  $routeProvider.when('/tabs',      {templateUrl: "tabs.html"}); 
-  $routeProvider.when('/accordion', {templateUrl: "accordion.html"}); 
-  $routeProvider.when('/overlay',   {templateUrl: "overlay.html"}); 
-  $routeProvider.when('/forms',     {templateUrl: "forms.html"});
-  $routeProvider.when('/carousel',  {templateUrl: "carousel.html"});
+  $routeProvider.when('/analisis1',    {templateUrl: "mapa1.html"});
+  $routeProvider.when('/analisis2',    {templateUrl: "toggle.html"});
+  $routeProvider.when('/analisis3',      {templateUrl: "tabs.html"});
+  $routeProvider.when('/analisis4', {templateUrl: "accordion.html"});
 });
 
 app.service('analytics', [
