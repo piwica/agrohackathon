@@ -90,3 +90,17 @@ h1 {
 .carousel-inner>.item.active + .item {
   z-index: 1999;
 }
+#map_canvas {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+}
+
+.angular-google-map-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
