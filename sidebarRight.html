@@ -98,16 +98,16 @@
         Presión
       </li>
     </ul>
-    <form id="renderizar" onsubmit="return renderizar();">
-      <select name="x" id="x">
+    <form id="renderizar" onsubmit="return renderizar();" style='text-align:center;'>
+      <select name="x" id="x" class="selectpicker">
         <option >X1</option>
         <option >X2</option>
       </select>
-      <select name="y" id="y">
+      <select name="y" id="y" class="selectpicker">
         <option >Y1</option>
         <option >Y2</option>
       </select>
-      <input type="submit" value="Renderizar"/>
+      <input type="submit" class='btn btn-default' value="Renderizar"/>
     </form>
     <div id="chart"></div>
       <!--
@@ -169,3 +169,8 @@
     </div>
   </div>
 </div>
+<script>
+  $('.selectpicker').selectpicker({
+      width:'auto'
+    });
+</script>
