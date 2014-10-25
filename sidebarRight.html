@@ -2,24 +2,18 @@
 <div class="scrollable" ng-controller="descriptivasCtrl">
   <div class="scrollable-content">
   <div class="list-group" toggle="off" bubble target="rightSidebar">
+    <h1 class="app-name">Datos Actuales</h1>
     <ul class="list-group">
       <li class="list-group-item">
       <span class="badge" ng-bind="humedad"></span>
         Humedad
       </li>
       <li class="list-group-item">
-      <span class="badge" ng-bind="cultivoAntecesor"></span>
-        Cultivo antecesor
-      </li>
-      <li class="list-group-item">
-      <span class="badge" ng-bind="estadoFenologico"></span>
-        Estado fenologico
-      </li>
-      <li class="list-group-item">
-      <span class="badge" ng-bind="estadisticasClimaticas"></span>
-        Estadisticas climaticas
+      <span class="badge" ng-bind="presion"></span>
+        Presión
       </li>
     </ul>
+      <!--
     <form id="renderizar" onsubmit="return renderizar();" class="form-inline" style="text-align:center">
       <select name="x" id="x" class="selectpicker">
         <option >X1</option>
@@ -27,7 +21,7 @@
       </select>
       <select name="y" id="y" class="selectpicker">
         <option >Y1</option>
-        <option >Y2</option>  
+        <option >Y2</option>
       </select>
       <input type="submit" class="btn btn-default" value="Renderizar"/>
     </form>
@@ -121,7 +115,7 @@
       });
     }
     </script>
-    <!--
+
     Humedad:<span ng-scope="humedad"></span><br>
     Cultivo antecesor:<span ng-scope="cultivoAntecesor"></span>
     Estado fenologico:<span ng-scope="estadoFenologico"></span>

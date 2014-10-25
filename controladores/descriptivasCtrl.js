@@ -3,13 +3,15 @@
  */
 app.controller('descriptivasCtrl',['$scope', function($scope) {
 
-    $scope.humedad = "20%";
-    $scope.cultivoAntecesor = "Soja";
-    $scope.estadoFenologico = "Bueno";
-    $scope.estadisticasClimaticas = "Lluvia";
+    $scope.humedad = "0";
+    $scope.presion = "0";
 
     $scope.$on( 'humedad.update', function (event, newHumedad) {
         $scope.humedad = newHumedad;
+    });
+
+    $scope.$on( 'presion.update', function (event, newPresion) {
+        $scope.presion = newPresion;
     });
 
 }]);

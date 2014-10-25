@@ -9,7 +9,20 @@ app
         this.$get = [ "$rootScope", function ($rootScope) {
 
             var function1 = function ( lat,  lon) {
-                $rootScope.$broadcast('humedad.update', "10%");
+                $.ajax({
+                    url: 'https://simple-weather.p.mashape.com/weatherdata?lat='+lat+'&lng='+lon, // The URL to the API. You can get this by clicking on "Show CURL example" from an API profile
+                    type: 'GET', // The HTTP Method
+                    success: function(data) {
+                        var json = $.parseJSON(data);
+                        $rootScope.$broadcast('humedad.update', json.query.results.channel.atmosphere.humidity);
+                        $rootScope.$broadcast('presion.update', json.query.results.channel.atmosphere.pressure);
+                    },
+                    error: function(err) { alert(err); },
+                    beforeSend: function(xhr) {
+                        xhr.setRequestHeader("X-Mashape-Authorization", "eSjAX5aHuLmshMqrgaZ4kuW43RdAp1AZYigjsn8FnZPvu17BRM"); // Enter here your Mashape key
+                    }
+                });
+
             }
 
             var function2 = function (lat, lon) {
