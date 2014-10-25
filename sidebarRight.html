@@ -72,10 +72,14 @@
         ["2013/14",3103]
       ]];
     var data = [];
+    var santaFeData = [];
       var cats = [];
       datos[0].forEach(function(point){
           data.push(point[1]);
           cats.push(point[0]);
+      });
+      dataSantaFe[0].forEach(function(point){
+          santaFeData.push(point[1]);
       });
       var chart;
 
@@ -109,7 +113,7 @@
               data: data
           },{
               name:"Santa Fe",
-              data:dataSantaFe,
+              data:santaFeData,
           }]
       });
   }
