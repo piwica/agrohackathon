@@ -2,8 +2,7 @@ var app = angular.module('MobileAngularUiExamples', [
   "google-maps".ns(),
   "ngRoute",
   "ngTouch",
-  "mobile-angular-ui",
-  "leaflet-directive"
+  "mobile-angular-ui"
 ]).config(['GoogleMapApiProvider'.ns(), function (GoogleMapApi) {
         GoogleMapApi.configure({
             //    key: 'your api key',
@@ -14,7 +13,6 @@ var app = angular.module('MobileAngularUiExamples', [
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider.when('/',          {templateUrl: "home.html"});
-  $routeProvider.when('/analisis1',    {templateUrl: "mapa1.html"});
   $routeProvider.when('/analisis2',    {templateUrl: "mapa2.html"});
   $routeProvider.when('/analisis3',      {templateUrl: "tabs.html"});
   $routeProvider.when('/analisis4', {templateUrl: "accordion.html"});
