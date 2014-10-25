@@ -1,5 +1,5 @@
 <script>
-  function getDatos(){
+  function getDatos(x,y,lat,lon){
       var json = [
     [
         ["20050043", 12.800000190735],
@@ -35,7 +35,7 @@
     ];
       return json;
     }
-  function render(datos){
+  function render(datos,x,y){
     var data = [];
       var cats = [];
       datos[0].forEach(function(point){
@@ -49,9 +49,10 @@
           chart: {
               type: 'line'
           },
+          title:{text:""},
           xAxis: {
               title:{
-                text:"Eje x"
+                text:x
               },
               categories: cats,
               labels: {
@@ -61,7 +62,7 @@
           },
           yAxis: {
               title: {
-                  text: "Eje y"
+                  text: y
               },
               plotLines: [{
                   value: 0,
@@ -73,8 +74,12 @@
           }]
       });
   }
+  lat = 0;
+  lon = 0;
   function renderizar(){
-    datos = getDatos();
+    var x = $( "#x option:selected" ).text();
+    var y = $( "#y option:selected" ).text();
+    datos = getDatos(x,y,lat,lon);
     render(datos);
     return false;
   }
