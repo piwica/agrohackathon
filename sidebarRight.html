@@ -59,6 +59,18 @@
         return sanMartin;
     }
   function render(datos,dpto){
+    var dataSantaFe=[[
+        ["2004/05",3235],
+        ["2005/06",2983],
+        ["2006/07",3330],
+        ["2007/08",3744],
+        ["2008/09",2879],
+        ["2009/10",3516],
+        ["2010/11",3413],
+        ["2011/12",2994],
+        ["2012/13",3308],
+        ["2013/14",3441]
+      ]];
     var data = [];
       var cats = [];
       datos[0].forEach(function(point){
@@ -95,6 +107,10 @@
           series: [{
               name:dpto,
               data: data
+          },{
+              name:"Santa Fe",
+              data:dataSantaFe,
+              color:green
           }]
       });
   }
