@@ -20,7 +20,7 @@
         Estadisticas climaticas
       </li>
     </ul>
-    <form id="renderizar" onsubmit="return renderizar()" class="form-inline">
+    <form id="renderizar" onsubmit="return renderizar()" class="form-inline" style="text-align:center">
       <select name="x" id="x" class="selectpicker">
         <option >X1</option>
         <option >X2</option>
@@ -29,11 +29,13 @@
         <option >Y1</option>
         <option >Y2</option>  
       </select>
-      <input type="submit" value="Renderizar">
+      <button type="submit" class="btn btn-default">Renderizar</button>
     </form>
     <div id="chart"></div>
     <script>
-    $('.selectpicker').selectpicker();
+    $('.selectpicker').selectpicker({
+      width:'auto'
+    });
     latitud = 0;
     longitud = 0;
     function renderizar(){
