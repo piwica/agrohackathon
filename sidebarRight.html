@@ -1,5 +1,5 @@
 <script>
-  function getDatos(lat,lon){
+  function getDatos(lat,lon,dpto){
       var belgrano=[[
         ["2004/05",3370],
         ["2005/06",3181],
@@ -49,16 +49,16 @@
         ["2013/14",3441]
       ]];
 
-      if(lat==-32.49248 && lon==-61.56744000000003)
+      if(dpto=="Belgrano")
         return belgrano;
-      if(lat==-32.55 && lon==-60.85000000000002)
+      if(dpto=="Iriondo")
         return iriondo;
-      if(lat==-32.03 && lon==-61.15999999999997)
+      if(dpto=="San Jeronimo")
         return sanJeronimo;
-      if(lat==-31.95 && lon==-61.829999999999984)
+      if(dpto="San Martin")
         return sanMartin;
     }
-  function render(datos){
+  function render(datos,dpto){
     var data = [];
       var cats = [];
       datos[0].forEach(function(point){
@@ -75,7 +75,7 @@
           title:{text:""},
           xAxis: {
               title:{
-                text:"Tiempo"
+                text:dpto
               },
               categories: cats,
               labels: {
@@ -85,7 +85,7 @@
           },
           yAxis: {
               title: {
-                  text: "Rendimiento"
+                  text: "Rendimiento kg/ha"
               },
               plotLines: [{
                   value: 0,
@@ -97,13 +97,21 @@
           }]
       });
   }
-  lat = 0;
-  lon = 0;
   function renderizar(lat,lon){
     //var x = $( "#x option:selected" ).text();
     //var y = $( "#y option:selected" ).text();
-    datos = getDatos(lat,lon);
-    render(datos);
+    dpto = "";
+    if(lat==-32.49248 && lon==-61.56744000000003)
+      dpto="Belgrano";
+    if(lat==-32.55 && lon==-60.85000000000002)
+      dpto="Iriondo";
+    if(lat==-32.03 && lon==-61.15999999999997)
+      dpto="San Jeronimo";
+    if(lat==-31.95 && lon==-61.829999999999984)
+      dpto="San Martin";
+
+    datos = getDatos(lat,lon,dpto);
+    render(datos,dpto);
     return false;
   }
 </script>
