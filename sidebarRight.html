@@ -20,7 +20,7 @@
         Estadisticas climaticas
       </li>
     </ul>
-    <form id="renderizar" onsubmit="return renderizar()" class="form-inline" style="text-align:center">
+    <form id="renderizar" onsubmit="renderizar(); return false;" class="form-inline" style="text-align:center">
       <select name="x" id="x" class="selectpicker">
         <option >X1</option>
         <option >X2</option>
@@ -43,7 +43,6 @@
       var y = $( "#y option:selected" ).text();
       datos = getDatos(x,y,latitud,longitud);
       render(x,y,datos);
-      console.log("Renderizar!!!"); 
       return false;
     }
     function getDatos(x,y,lat,lon){
