@@ -1,3 +1,5 @@
+var globalLat =0;
+var globalLon = 0;
 app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsDescriptivasSvc', function($scope, GoogleMapApi, actualizarStatsDescriptivasSvc) {
     $scope.map = {center: {latitude: -32.2, longitude: -61.30 }, zoom: 9 };
     $scope.options = {scrollwheel: false};
@@ -24,8 +26,9 @@ app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsD
                     click: function (circle, eventName, args) {
                         var lat = circle.getCenter().lat();
                         var lon = circle.getCenter().lng();
+                        globalLat = lat;
+                        globalLon = lon;
                         actualizarStatsDescriptivasSvc.function1(lat,lon);
-                        actualizarStatsDescriptivasSvc.function2(lat,lon);
                     }
                 },
                 geodesic: true, // optional: defaults to false
@@ -36,6 +39,34 @@ app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsD
 
             $scope.circles.push(circle);
     }
+    );
+
+    jQuery.each(otrasEstaciones, function(i, val) {
+            var circle =
+            {
+                id: val.ID,
+                center: {
+                    latitude: val.lat,
+                    longitude: val.lon
+                },
+                radius: 500,
+                stroke: {
+                    color: 'blue',
+                    weight: 2,
+                    opacity: 1
+                },
+                fill: {
+                    color: 'blue',
+                    opacity: 0.5
+                },
+                geodesic: true, // optional: defaults to false
+                draggable: false, // optional: defaults to false
+                editable: false, // optional: defaults to false
+                visible: true // optional: defaults to true
+            };
+
+            $scope.circles.push(circle);
+        }
     );
 
 
