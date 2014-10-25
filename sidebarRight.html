@@ -1,22 +1,22 @@
 
-<div class="scrollable">
+<div class="scrollable" ng-controller="descriptivasCtrl">
   <div class="scrollable-content">
   <div class="list-group" toggle="off" bubble target="rightSidebar">
     <ul class="list-group">
       <li class="list-group-item">
-      <span class="badge" ng-scope="humedad">14%</span>
+      <span class="badge" ng-bind="humedad"></span>
         Humedad
       </li>
       <li class="list-group-item">
-      <span class="badge" ng-scope="cultivoAntecesor">Soja</span>
+      <span class="badge" ng-bind="cultivoAntecesor"></span>
         Cultivo antecesor
       </li>
       <li class="list-group-item">
-      <span class="badge" ng-scope="estadoFenologico">Bueno</span>
+      <span class="badge" ng-bind="estadoFenologico"></span>
         Estado fenologico
       </li>
       <li class="list-group-item">
-      <span class="badge" ng-scope="estadisticasClimaticas">Lluvia</span>
+      <span class="badge" ng-bind="estadisticasClimaticas"></span>
         Estadisticas climaticas
       </li>
     </ul>

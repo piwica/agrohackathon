@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="74ced3fb-2f66-4790-a15a-442fee1edae3" name="Default" comment="Primer mapa">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/javascripts/datosharcodeados.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/controladores/descriptivasCtrl.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js" afterPath="$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/controladores/mapaCtrlGoogle.js" afterPath="$PROJECT_DIR$/controladores/mapaCtrlGoogle.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/sidebarRight.html" afterPath="$PROJECT_DIR$/sidebarRight.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="agrohackathon.iws" />
@@ -29,19 +29,39 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="mapaCtrlGoogle.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="mapaCtrlGoogle.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controladores/mapaCtrlGoogle.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="59" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.44642857" vertical-offset="225" max-vertical-offset="855">
+            <state line="25" column="59" selection-start="0" selection-end="1780" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="855">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="actualizarStatsDescriptivas.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="sidebarRight.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sidebarRight.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="57" selection-start="644" selection-end="666" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="825">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="descriptivasCtrl.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controladores/descriptivasCtrl.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="8" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
+              <folding>
+                <element signature="e#0#41#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="actualizarStatsDescriptivas.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="45" selection-start="77" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+            <state line="11" column="16" selection-start="253" selection-end="253" vertical-scroll-proportion="0.28" vertical-offset="30" max-vertical-offset="420">
               <folding>
                 <element signature="e#0#41#0" expanded="false" />
               </folding>
@@ -52,7 +72,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="59" selection-start="2171" selection-end="2171" vertical-scroll-proportion="-7.5" vertical-offset="525" max-vertical-offset="1680">
+            <state line="44" column="4" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-9.375" vertical-offset="435" max-vertical-offset="1695">
               <folding />
             </state>
           </provider>
@@ -95,16 +115,17 @@
         <option value="$PROJECT_DIR$/sidebar.html" />
         <option value="$PROJECT_DIR$/demo.js" />
         <option value="$PROJECT_DIR$/mapa2.html" />
-        <option value="$PROJECT_DIR$/sidebarRight.html" />
         <option value="$PROJECT_DIR$/javascripts/datosharcodeados.js" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js" />
         <option value="$PROJECT_DIR$/controladores/mapaCtrlGoogle.js" />
+        <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/sidebarRight.html" />
+        <option value="$PROJECT_DIR$/controladores/descriptivasCtrl.js" />
+        <option value="$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="9" />
+    <option name="x" value="16" />
     <option name="y" value="22" />
     <option name="width" value="1260" />
     <option name="height" value="721" />
@@ -165,6 +186,20 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="servicios" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agrohackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="agrohackathon" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controladores" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -257,7 +292,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="9" y="22" width="1260" height="721" extended-state="0" />
+    <frame x="16" y="22" width="1260" height="721" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294509" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -294,13 +329,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/stylesheets/leaflet.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="206" column="14" selection-start="4140" selection-end="4140" vertical-scroll-proportion="0.0" vertical-offset="6722" max-vertical-offset="7245">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/carousel.html">
       <provider selected="true" editor-type-id="text-editor">
         <state line="2" column="8" selection-start="88" selection-end="267" vertical-scroll-proportion="0.0" vertical-offset="30" max-vertical-offset="360">
@@ -371,20 +399,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sidebarRight.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="741" selection-end="741" vertical-scroll-proportion="-6.875" vertical-offset="195" max-vertical-offset="525">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="59" selection-start="2171" selection-end="2171" vertical-scroll-proportion="-7.5" vertical-offset="525" max-vertical-offset="1680">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascripts/datosharcodeados.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="9" selection-start="116" selection-end="125" vertical-scroll-proportion="-1.9444444" vertical-offset="0" max-vertical-offset="525">
@@ -392,19 +406,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js">
+    <entry file="file://$PROJECT_DIR$/controladores/mapaCtrlGoogle.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="45" selection-start="77" selection-end="107" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="405">
+        <state line="25" column="59" selection-start="0" selection-end="1780" vertical-scroll-proportion="-14.423077" vertical-offset="0" max-vertical-offset="855">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="4" selection-start="2065" selection-end="2065" vertical-scroll-proportion="-9.375" vertical-offset="435" max-vertical-offset="1695">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sidebarRight.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="57" selection-start="644" selection-end="666" vertical-scroll-proportion="-11.25" vertical-offset="0" max-vertical-offset="825">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controladores/descriptivasCtrl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="8" selection-start="332" selection-end="332" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="270">
           <folding>
             <element signature="e#0#41#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controladores/mapaCtrlGoogle.js">
+    <entry file="file://$PROJECT_DIR$/servicios/actualizarStatsDescriptivas.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="59" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.44642857" vertical-offset="225" max-vertical-offset="855">
-          <folding />
+        <state line="11" column="16" selection-start="253" selection-end="253" vertical-scroll-proportion="0.28" vertical-offset="30" max-vertical-offset="420">
+          <folding>
+            <element signature="e#0#41#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

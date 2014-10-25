@@ -9,7 +9,7 @@ app
         this.$get = [ "$rootScope", function ($rootScope) {
 
             var function1 = function ( lat,  lon) {
-                console.log("funcion 1:"+lat+","+lon);
+                $rootScope.$broadcast('humedad.update', "10%");
             }
 
             var function2 = function (lat, lon) {
