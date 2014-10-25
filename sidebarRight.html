@@ -23,7 +23,7 @@
         <option >Y1</option>
         <option >Y2</option>
       </select>
-      <input type="submit" class="btn btn-default" value="Renderizar"/>
+      <input type="submit" value="Renderizar"/>
     </form>
     <div id="chart"></div>
     <script>
@@ -33,6 +33,7 @@
     latitud = 0;
     longitud = 0;
     function renderizar(){
+      return false;
       var x = $( "#x option:selected" ).text();
       var y = $( "#y option:selected" ).text();
       datos = getDatos(x,y,latitud,longitud);
