@@ -29,6 +29,7 @@ app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsD
                         globalLat = lat;
                         globalLon = lon;
                         actualizarStatsDescriptivasSvc.function1(lat,lon);
+                        renderizar(lat,lon);
                     }
                 },
                 geodesic: true, // optional: defaults to false

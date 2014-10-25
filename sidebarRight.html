@@ -1,41 +1,64 @@
 <script>
-  function getDatos(x,y,lat,lon){
-      var json = [
-    [
-        ["20050043", 12.800000190735],
-        ["20050044", 17.39999961853],
-        ["20050045", 10.10000038147],
-        ["20050046", 5.9000000953674],
-        ["20050048", 4.6999998092651],
-        ["20050049", 9.8999996185303],
-        ["20050050", 9.1999998092651],
-        ["20050051", 8.3999996185303],
-        ["20050052", 2.0999999046326],
-        ["20060001", 2.7000000476837],
-        ["20060002", -1.1000000238419],
-        ["20060004", 2],
-        ["20060005", 4.9000000953674],
-        ["20060006", 6.8000001907349],
-        ["20060007", 6.0999999046326],
-        ["20060009", 4.3000001907349],
-        ["20060010", 3.4000000953674],
-        ["20060011", 8.1999998092651],
-        ["20060012", 7],
-        ["20060017", 11.60000038147],
-        ["20060018", 21.60000038147],
-        ["20060019", 24.799999237061],
-        ["20060020", 16.700000762939],
-        ["20060021", 0],
-        ["20060022", 0],
-        ["20060024", 0],
-        ["20060025", 18.10000038147],
-        ["20060026", 20.200000762939],
-        ["20060052", 2.9000000953674]
-    ]
-    ];
-      return json;
+  function getDatos(lat,lon){
+      var belgrano=[[
+        ["2004/05",3370],
+        ["2005/06",3181],
+        ["2006/07",3351],
+        ["2007/08",3368],
+        ["2008/09",2706],
+        ["2009/10",3508],
+        ["2010/11",3193],
+        ["2011/12",3315],
+        ["2012/13",3487],
+        ["2013/14",3358]
+      ]];
+      var iriondo=[[
+        ["2004/05",3237],
+        ["2005/06",3321],
+        ["2006/07",3442],
+        ["2007/08",3872],
+        ["2008/09",2905],
+        ["2009/10",3387],
+        ["2010/11",3096],
+        ["2011/12",3244],
+        ["2012/13",3508],
+        ["2013/14",3250]
+      ]];
+      var sanJeronimo=[[
+        ["2004/05",2492],
+        ["2005/06",2582],
+        ["2006/07",3225],
+        ["2007/08",3457],
+        ["2008/09",2661],
+        ["2009/10",3545],
+        ["2010/11",2686],
+        ["2011/12",2958],
+        ["2012/13",3335],
+        ["2013/14",3341]
+      ]];
+      var sanMartin=[[
+        ["2004/05",3235],
+        ["2005/06",2983],
+        ["2006/07",3330],
+        ["2007/08",3744],
+        ["2008/09",2879],
+        ["2009/10",3516],
+        ["2010/11",3413],
+        ["2011/12",2994],
+        ["2012/13",3308],
+        ["2013/14",3441]
+      ]];
+
+      if(lat==-32.49248 && lon==-61.56744)
+        return belgrano;
+      if(lat==-32.55 && lon==-60.85)
+        return iriondo;
+      if(lat==-32.03 && lon==-61.16)
+        return sanJeronimo;
+      if(lat==-31.95 && lon==-61.83)
+        return sanMartin;
     }
-  function render(datos,x,y){
+  function render(datos){
     var data = [];
       var cats = [];
       datos[0].forEach(function(point){
@@ -52,7 +75,7 @@
           title:{text:""},
           xAxis: {
               title:{
-                text:x
+                text:"Tiempo"
               },
               categories: cats,
               labels: {
@@ -62,7 +85,7 @@
           },
           yAxis: {
               title: {
-                  text: y
+                  text: "Rendimiento"
               },
               plotLines: [{
                   value: 0,
@@ -76,10 +99,10 @@
   }
   lat = 0;
   lon = 0;
-  function renderizar(){
-    var x = $( "#x option:selected" ).text();
-    var y = $( "#y option:selected" ).text();
-    datos = getDatos(x,y,lat,lon);
+  function renderizar(lat,lon){
+    //var x = $( "#x option:selected" ).text();
+    //var y = $( "#y option:selected" ).text();
+    datos = getDatos(lat,lon);
     render(datos);
     return false;
   }
@@ -98,7 +121,7 @@
         Presión
       </li>
     </ul>
-    <form id="renderizar" onsubmit="return renderizar();" style='text-align:center;margin-bottom:5px;'>
+    <!--<form id="renderizar" onsubmit="return renderizar();" style='text-align:center;margin-bottom:5px;'>
       <select name="x" id="x">
         <option >X1</option>
         <option >X2</option>
@@ -108,7 +131,7 @@
         <option >Y2</option>
       </select>
       <input type="submit" value="Renderizar"/>
-    </form>
+    </form>-->
     <div id="chart"></div>
       <!--
     <form id="renderizar" onsubmit="return renderizar();" class="form-inline" style="text-align:center">
