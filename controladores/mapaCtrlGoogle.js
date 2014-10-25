@@ -1,37 +1,43 @@
-app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), function($scope, GoogleMapApi) {
-    $scope.map = {center: {latitude: 44, longitude: -108 }, zoom: 4 };
+app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsDescriptivasSvc', function($scope, GoogleMapApi, actualizarStatsDescriptivasSvc) {
+    $scope.map = {center: {latitude: -33.62905, longitude: -62.415783 }, zoom: 8 };
     $scope.options = {scrollwheel: false};
-    $scope.circles = [
-        {
-            id: 1,
-            center: {
-                latitude: 44,
-                longitude: -108
-            },
-            radius: 500000,
-            stroke: {
-                color: '#08B21F',
-                weight: 2,
-                opacity: 1
-            },
-            fill: {
-                color: '#08B21F',
-                opacity: 0.5
-            },
-            events: {
-                click: function (circle, eventName, args) {
-                    var lat = circle.getCenter().lat();
-                    var lon = circle.getCenter().lng();
-                    var radius = circle.getRadius();
-                    console.log(lat+","+lon+","+radius);
-                }
-            },
-            geodesic: true, // optional: defaults to false
-            draggable: false, // optional: defaults to false
-            editable: false, // optional: defaults to false
-            visible: true // optional: defaults to true
-        }
-    ];
+    $scope.circles = [];
+    jQuery.each(puntosejemplo, function(i, val) {
+        var circle =
+            {
+                id: i,
+                center: {
+                    latitude: val.lat,
+                    longitude: val.lon
+                },
+                radius: 1000,
+                stroke: {
+                    color: 'red',
+                    weight: 2,
+                    opacity: 1
+                },
+                fill: {
+                    color: 'red',
+                    opacity: 0.5
+                },
+                events: {
+                    click: function (circle, eventName, args) {
+                        var lat = circle.getCenter().lat();
+                        var lon = circle.getCenter().lng();
+                        actualizarStatsDescriptivasSvc.function1(lat,lon);
+                        actualizarStatsDescriptivasSvc.function2(lat,lon);
+                    }
+                },
+                geodesic: true, // optional: defaults to false
+                draggable: false, // optional: defaults to false
+                editable: false, // optional: defaults to false
+                visible: true // optional: defaults to true
+            };
+
+            $scope.circles.push(circle);
+    }
+    );
+
 
 
     /*
