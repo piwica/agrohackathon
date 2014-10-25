@@ -1,4 +1,6 @@
-
+<script>
+  function renderizar(){return false;}
+</script>
 <div class="scrollable" ng-controller="descriptivasCtrl">
   <div class="scrollable-content">
   <div class="list-group" toggle="off" bubble target="rightSidebar">
@@ -13,6 +15,17 @@
         Presión
       </li>
     </ul>
+    <form id="renderizar" onsubmit="return renderizar();">
+      <select name="x" id="x">
+        <option >X1</option>
+        <option >X2</option>
+      </select>
+      <select name="y" id="y">
+        <option >Y1</option>
+        <option >Y2</option>
+      </select>
+      <input type="submit" value="Renderizar"/>
+    </form>
       <!--
     <form id="renderizar" onsubmit="return renderizar();" class="form-inline" style="text-align:center">
       <select name="x" id="x" class="selectpicker">
