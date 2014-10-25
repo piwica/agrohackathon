@@ -1,59 +1,5 @@
 <script>
-  function renderizar(){return false;}
-</script>
-<div class="scrollable" ng-controller="descriptivasCtrl">
-  <div class="scrollable-content">
-  <div class="list-group" toggle="off" bubble target="rightSidebar">
-    <h1 class="app-name">Datos Actuales</h1>
-    <ul class="list-group">
-      <li class="list-group-item">
-      <span class="badge" ng-bind="humedad"></span>
-        Humedad
-      </li>
-      <li class="list-group-item">
-      <span class="badge" ng-bind="presion"></span>
-        Presión
-      </li>
-    </ul>
-    <form id="renderizar" onsubmit="return renderizar();">
-      <select name="x" id="x">
-        <option >X1</option>
-        <option >X2</option>
-      </select>
-      <select name="y" id="y">
-        <option >Y1</option>
-        <option >Y2</option>
-      </select>
-      <input type="submit" value="Renderizar"/>
-    </form>
-      <!--
-    <form id="renderizar" onsubmit="return renderizar();" class="form-inline" style="text-align:center">
-      <select name="x" id="x" class="selectpicker">
-        <option >X1</option>
-        <option >X2</option>
-      </select>
-      <select name="y" id="y" class="selectpicker">
-        <option >Y1</option>
-        <option >Y2</option>
-      </select>
-      <input type="submit" value="Renderizar"/>
-    </form>
-    <div id="chart"></div>
-    <script>
-    $('.selectpicker').selectpicker({
-      width:'auto'
-    });
-    latitud = 0;
-    longitud = 0;
-    function renderizar(){
-      return false;
-      var x = $( "#x option:selected" ).text();
-      var y = $( "#y option:selected" ).text();
-      datos = getDatos(x,y,latitud,longitud);
-      render(x,y,datos);
-      return false;
-    }
-    function getDatos(x,y,lat,lon){
+  function getDatos(){
       var json = [
     [
         ["20050043", 12.800000190735],
@@ -86,11 +32,11 @@
         ["20060026", 20.200000762939],
         ["20060052", 2.9000000953674]
     ]
-];
+    ];
       return json;
     }
-    function render(x,y,datos){
-      var data = [];
+  function render(datos){
+    var data = [];
       var cats = [];
       datos[0].forEach(function(point){
           data.push(point[1]);
@@ -103,10 +49,9 @@
           chart: {
               type: 'line'
           },
-          title:{text:""}
           xAxis: {
               title:{
-                text:x
+                text:"Eje x"
               },
               categories: cats,
               labels: {
@@ -116,7 +61,7 @@
           },
           yAxis: {
               title: {
-                  text: y
+                  text: "Eje y"
               },
               plotLines: [{
                   value: 0,
@@ -127,6 +72,69 @@
               data: data
           }]
       });
+  }
+  function renderizar(){
+    datos = getDatos();
+    render(datos);
+    return false;
+  }
+</script>
+<div class="scrollable" ng-controller="descriptivasCtrl">
+  <div class="scrollable-content">
+  <div class="list-group" toggle="off" bubble target="rightSidebar">
+    <h1 class="app-name">Datos Actuales</h1>
+    <ul class="list-group">
+      <li class="list-group-item">
+      <span class="badge" ng-bind="humedad"></span>
+        Humedad
+      </li>
+      <li class="list-group-item">
+      <span class="badge" ng-bind="presion"></span>
+        Presión
+      </li>
+    </ul>
+    <form id="renderizar" onsubmit="return renderizar();">
+      <select name="x" id="x">
+        <option >X1</option>
+        <option >X2</option>
+      </select>
+      <select name="y" id="y">
+        <option >Y1</option>
+        <option >Y2</option>
+      </select>
+      <input type="submit" value="Renderizar"/>
+    </form>
+    <div id="chart"></div>
+      <!--
+    <form id="renderizar" onsubmit="return renderizar();" class="form-inline" style="text-align:center">
+      <select name="x" id="x" class="selectpicker">
+        <option >X1</option>
+        <option >X2</option>
+      </select>
+      <select name="y" id="y" class="selectpicker">
+        <option >Y1</option>
+        <option >Y2</option>
+      </select>
+      <input type="submit" value="Renderizar"/>
+    </form>
+    <div id="chart"></div>
+    <script>
+    $('.selectpicker').selectpicker({
+      width:'auto'
+    });
+    latitud = 0;
+    longitud = 0;
+    function renderizar(){
+      return false;
+      var x = $( "#x option:selected" ).text();
+      var y = $( "#y option:selected" ).text();
+      datos = getDatos(x,y,latitud,longitud);
+      render(x,y,datos);
+      return false;
+    }
+    
+    function render(x,y,datos){
+      
     }
     </script>
 
