@@ -1,5 +1,5 @@
 app.controller('mapactrlgoogle',['$scope','GoogleMapApi'.ns(), 'actualizarStatsDescriptivasSvc', function($scope, GoogleMapApi, actualizarStatsDescriptivasSvc) {
-    $scope.map = {center: {latitude: -33.62905, longitude: -62.415783 }, zoom: 8 };
+    $scope.map = {center: {latitude: -32.2, longitude: -61.30 }, zoom: 9 };
     $scope.options = {scrollwheel: false};
     $scope.circles = [];
     jQuery.each(puntosejemplo, function(i, val) {

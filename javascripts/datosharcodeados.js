@@ -4,27 +4,22 @@
 
 var puntosejemplo = {};
 puntosejemplo[1] = {
-    lat:-33.62905,
-    lon:-62.415783
+    lat:-31.95,
+    lon:-61.83
 };
 puntosejemplo[2] = {
-    lat:-33.286469,
-    lon:-62.943533
+    lat:-32.03,
+    lon:-61.16
 };
 puntosejemplo[3] = {
-    lat:-33.902359,
-    lon:-61.592931
+    lat:-32.49248,
+    lon:-61.56744
 };
 puntosejemplo[4] = {
-    lat:-33.993372,
-    lon:-61.681063
+    lat:-32.55,
+    lon:-60.85
 };
 puntosejemplo[5] = {
     lat:-33.900336,
     lon:-61.366047
-};
-
-puntosejemplo[5] = {
-    lat:-35.425628,
-    lon:-59.759578
 };
