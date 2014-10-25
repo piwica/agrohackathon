@@ -20,12 +20,12 @@
         Estadisticas climaticas
       </li>
     </ul>
-    <form id="renderizar" onsubmit="return renderizar()">
-      <select name="x" class="selectpicker">
+    <form id="renderizar" onsubmit="return renderizar()" class="form-inline">
+      <select name="x" id="x" class="selectpicker">
         <option >X1</option>
         <option >X2</option>
       </select>
-      <select name="y" class="selectpicker">
+      <select name="y" id="y" class="selectpicker">
         <option >Y1</option>
         <option >Y2</option>  
       </select>
@@ -33,8 +33,19 @@
     </form>
     <div id="chart"></div>
     <script>
-    function renderizar(){console.log("Renderizar!!!"); return false;}
-    var json = [
+    $('.selectpicker').selectpicker();
+    latitud = 0;
+    longitud = 0;
+    function renderizar(){
+      var x = $( "#x option:selected" ).text();
+      var y = $( "#y option:selected" ).text();
+      datos = getDatos(x,y,latitud,longitud);
+      render(x,y,datos);
+      console.log("Renderizar!!!"); 
+      return false;
+    }
+    function getDatos(x,y,lat,lon){
+      var json = [
     [
         ["20050043", 12.800000190735],
         ["20050044", 17.39999961853],
@@ -67,43 +78,46 @@
         ["20060052", 2.9000000953674]
     ]
 ];
+      return json;
+    }
+    function render(x,y,datos){
+      var data = [];
+      var cats = [];
+      datos[0].forEach(function(point){
+          data.push(point[1]);
+          cats.push(point[0]);
+      });
+      var chart;
 
-var data = [];
-var cats = [];
-json[0].forEach(function(point){
-    data.push(point[1]);
-    cats.push(point[0]);
-});
-var chart;
-
-//hier geht es los
-var chart = $("#chart").highcharts({
-    chart: {
-        type: 'line'
-    },
-    title: {
-        text: 'Wetterdatenprojekt'
-    },
-    xAxis: {
-        categories: cats,
-        labels: {
-            rotation: 70,
-            y: 40
-        }
-    },
-    yAxis: {
-        title: {
-            text: 'aktuelle Wetterwerte'
-        },
-        plotLines: [{
-            value: 0,
-            width: 1
-        }]
-    },
-    series: [{
-        data: data
-    }]
-});
+      //hier geht es los
+      var chart = $("#chart").highcharts({
+          chart: {
+              type: 'line'
+          },
+          xAxis: {
+              title:{
+                text:x
+              },
+              categories: cats,
+              labels: {
+                  rotation: 70,
+                  y: 40
+              }
+          },
+          yAxis: {
+              title: {
+                  text: y
+              },
+              plotLines: [{
+                  value: 0,
+                  width: 1
+              }]
+          },
+          series: [{
+              data: data
+          }]
+      });
+    }
     </script>
     <!--
     Humedad:<span ng-scope="humedad"></span><br>

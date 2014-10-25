@@ -57,7 +57,7 @@
     <!-- Sidebars -->
     <div ng-include="'sidebar.html'" class="sidebar sidebar-left" toggleable parent-active-class="sidebar-left-in" id="mainSidebar"></div>
 
-    <div ng-include="'sidebarRight.html'" class="sidebar sidebar-right" toggleable parent-active-class="sidebar-right-in" id="rightSidebar"></div>
+    <div ng-include="'sidebarRight.html'" class="sidebar sidebar-right" parent-active-class="sidebar-right-in" id="rightSidebar"></div>
 
     <div class="app">
 
@@ -73,7 +73,7 @@
           </div>
         </div>
         <div class="btn-group pull-right" yield-to="navbarAction">
-          <div ng-click="toggle('rightSidebar')" class="btn btn-navbar">
+          <div ng-click="toggle('#rightSidebar')" class="btn btn-navbar">
             <i class="fa fa-bar-chart"></i> Stats
           </div>
         </div>
@@ -105,7 +105,6 @@
 
        ga('create', 'UA-48036416-1', 'mobileangularui.com');
        ga('send', 'pageview');
-       $('.selectpicker').selectpicker();
      </script>
   </body>
 </html>
