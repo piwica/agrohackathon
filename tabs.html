@@ -1,9 +1,10 @@
+
 <div class="scrollable"> 
   <div class="scrollable-content">
     <div class="section container-fluid">
 
       <ul class="nav nav-tabs">
-        <li><a href="#Tab1" toggle="on" parent-active-class="active">Tab 1</a></li>
+        <li><a href="#Tab1" toggle="on" parent-active-class="active">Analisis</a></li>
         <li><a href="#Tab2" toggle="on" parent-active-class="active">Tab 2</a></li>
         <li><a href="#Tab3" toggle="on" parent-active-class="active">Tab 3</a></li>
       </ul>
@@ -16,8 +17,8 @@
             id="Tab1" 
             exclusion-group="myTabs">
 
-          <h3 class="page-header">Tab 1</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, commodi, corporis, dicta cupiditate officiis nostrum recusandae aperiam quia dolores amet architecto laudantium alias in omnis perferendis. Ullam asperiores dolorum nobis.</p>
+          <h3 class="page-header">Analisis</h3>
+          <div id="chartAnalisis"></div>
         </div>
 
         <div class="tab-pane" 
@@ -63,3 +64,70 @@
     </div>
   </div>
 </div>
+<script>
+  var datos1=[[devolverserie1()]];
+  var datos2=[[devolverserie2()]];
+  var datos3=[[devolverserie3()]];
+  var datos4=[[devolverserie4()]];
+
+  var data1=[];
+  var data2=[];
+  var data3=[];
+  var data4=[];
+
+  var cats = [];
+  datos1[0].forEach(function(point){
+      data1.push(point[1]);
+      cats.push(point[0]);
+  });
+  datos2[0].forEach(function(point){
+      data2.push(point[1]);
+  });
+  datos3[0].forEach(function(point){
+      data3.push(point[1]);
+  });
+  datos4[0].forEach(function(point){
+      data4.push(point[1]);
+  });
+  var chart;
+
+  //hier geht es los
+  var chart = $("#chart").highcharts({
+      chart: {
+          type: 'line'
+      },
+      title:{text:""},
+      xAxis: {
+          title:{
+            text:"Tiempo"
+          },
+          categories: cats,
+          labels: {
+              rotation: 70,
+              y: 40
+          }
+      },
+      yAxis: {
+          title: {
+              text: "Temperatura (C)"
+          },
+          plotLines: [{
+              value: 0,
+              width: 1
+          }]
+      },
+      series: [{
+          name:"Temp Abrigo 150",
+          data:data1
+      },{
+          name:"Temp Abrigo 150 max",
+          data:data2
+      },{
+          name:"Temp Abrigo 150 min",
+          data:data3
+      },{
+          name:"Temp suelo 10 media",
+          data:data4
+      }]
+  });
+</script>
