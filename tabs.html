@@ -76,18 +76,19 @@
   var data4=[];
 
   var cats = [];
+
   datos1[0].forEach(function(point){
-      data1.push(point[1]);
+      data1.push(parseInt(point[1]));
       cats.push(point[0]);
   });
   datos2[0].forEach(function(point){
-      data2.push(point[1]);
+      data2.push(parseInt(point[1]));
   });
   datos3[0].forEach(function(point){
-      data3.push(point[1]);
+      data3.push(parseInt(point[1]));
   });
   datos4[0].forEach(function(point){
-      data4.push(point[1]);
+      data4.push(parseInt(point[1]));
   });
   var chart;
 
